@@ -1,6 +1,6 @@
 # Panduan Instalasi Hyperspace Nodes
 Panduan ini menjelaskan langkah-langkah untuk menginstal, mengonfigurasi, dan mengelola Hyperspace Nodes di VPS Anda.
-For more information, visit the official website: node.hyper.space
+For more information, For more information, visit the [official website](https://node.hyper.space).
 
 # Persyaratan
 - VPS: Minimal RAM 8GB untuk Tier 3. Jika kurang, gunakan Tier 5.
