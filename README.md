@@ -30,9 +30,9 @@ chmod 600 my.pem
 ```bash
 screen -S Hypernodes
 ```
+- exit Jalankan script berikut, dengan menekan CTRL + A + D:
 
 6. Jalankan Script Hyperspace Nodes
-Jalankan script berikut, lalu keluar dari screen dengan menekan CTRL + A + D:
 ```bash
 aios-cli start
 ```
