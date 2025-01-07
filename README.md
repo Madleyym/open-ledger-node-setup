@@ -1,12 +1,12 @@
 # Panduan Instalasi Hyperspace Nodes
-## Panduan ini menjelaskan langkah-langkah untuk menginstal, mengonfigurasi, dan mengelola Hyperspace Nodes di VPS Anda.
-## For more information, visit the official website: node.hyper.space
+Panduan ini menjelaskan langkah-langkah untuk menginstal, mengonfigurasi, dan mengelola Hyperspace Nodes di VPS Anda.
+For more information, visit the official website: node.hyper.space
 
 # Persyaratan
-## VPS: Minimal RAM 8GB untuk Tier 3. Jika kurang, gunakan Tier 5.
-## Akses SSH: Pastikan Anda memiliki akses SSH ke VPS.
-## Pengetahuan Dasar: Pemahaman dasar tentang perintah Linux terminal.
-## Langkah-langkah Instalasi dan Konfigurasi
+VPS: Minimal RAM 8GB untuk Tier 3. Jika kurang, gunakan Tier 5.
+Akses SSH: Pastikan Anda memiliki akses SSH ke VPS.
+Pengetahuan Dasar: Pemahaman dasar tentang perintah Linux terminal.
+Langkah-langkah Instalasi dan Konfigurasi
 
 1. Install Hyperspace Nodes
 ```bash
