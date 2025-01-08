@@ -1,111 +1,70 @@
-# Panduan Instalasi Hyperspace Nodes
-Panduan ini menjelaskan langkah-langkah untuk menginstal, mengonfigurasi, dan mengelola Hyperspace Nodes di VPS Anda.
-For more information, For more information, visit the [official website](https://node.hyper.space).
+# Open Ledger Node Setup
 
-# Persyaratan
-- VPS: Minimal RAM 8GB untuk Tier 3. Jika kurang, gunakan Tier 5.
-- Akses SSH: Pastikan Anda memiliki akses SSH ke VPS.
-- Pengetahuan Dasar: Pemahaman dasar tentang perintah Linux terminal.
+This repository contains the setup guide and necessary commands for running an Open Ledger Node on a VPS with the specified configuration.
 
-## Langkah-langkah Instalasi dan Konfigurasi
-1. Install Hyperspace Nodes
-```bash
-curl https://download.hyper.space/api/install | bash
-```
-2. Muat Ulang Bash Profile
-```bash
-source /root/.bashrc
-```
-3. Buat File my.pem
-```bash
-nano my.pem
-```
-Simpan file dengan menekan CTRL + S lalu keluar dengan CTRL + X.
-4. Atur Izin untuk File my.pem
-```bash
-chmod 600 my.pem
-```
+## Requirements
 
-5. Buat Screen Baru untuk Hyperspace Nodes
-```bash
-screen -S Hypernodes
-```
-- exit Jalankan script berikut, dengan menekan CTRL + A + D:
+- **VPS** with the following specifications:
+  - **RAM:** 4 GB
+  - **CPU:** 2 AMD vCPU
+  - **Location:** Singapore
 
-6. Jalankan Script Hyperspace Nodes
-```bash
-aios-cli start
-```
+## How to Run the Open Ledger Node
 
-7. Periksa Model dan Tier yang Tersedia
+Follow these steps to install and run the Open Ledger Node on your VPS:
+
+### 1. **Login to Your VPS**
+Login to your VPS using SSH with your credentials:
+- **Username:** `root`
+- **Password:** Your VPS password
+
+### 2. **Create a Screen Session**
+Run the following command to create a screen session:
 ```bash
-aios-cli models available
+screen -Rd openledger
 ```
-## Pilih Tier sesuai spesifikasi VPS:
-- Tier 3: Untuk RAM 8GB atau lebih.
-- Tier 5: Untuk RAM kurang dari 8GB.
-- Gunakan perintah berikut untuk memilih tier:
+3. Download and Install the Script
+- Copy and paste the following command into the terminal to download and run the installation script:
 ```bash
-aios-cli hive select-tier 5
+wget -qO- https://raw.githubusercontent.com/dipdown/Node-Crypto/refs/heads/main/OpenLedger/open-ledger.sh | bash
+```
+- Wait for the installation to complete.
+
+4. Access Remote Desktop
+- To interact with the Open Ledger Node:
+- PC: Open Remote Desktop Connection.
+- Mobile: Use the RDClient app.
+- Login with the Username root and the VPS password.
+
+5. Download Open Ledger Node File
+- Once logged into the RDP session, open the terminal and run the following command to download the node package:
+```bash
+wget https://cdn.openledger.xyz/openledger-node-1.0.0-linux.zip
 ```
 
-8. Tambahkan Model Default
+6. Extract the Node Files
+- Navigate to the directory where the openledger-node-1.0.0-linux.zip file is located using the file manager in your RDP session, right-click the file, and select Extract Here.
+
+7. Run the Node
+- Go back to the terminal and run the following command to start the node:
 ```bash
-Salin kode
-aios-cli models add hf:TheBloke/phi-2-GGUF:phi-2.Q4_K_M.gguf
+openledger-node --no-sandbox
 ```
 
-9. Jalankan Script Inference
-```bash
-aios-cli infer --model hf:TheBloke/phi-2-GGUF:phi-2.Q4_K_M.gguf --prompt "Can you explain the concept of hyperspace and its applications in science fiction?"
-```
-- Atau gunakan prompt khusus:
+8. Setup Open Ledger
+- Follow the on-screen prompts:
+- Login with your Google Account.
+- Click Connect and wait until the indicator turns green.
 
-```bash
-aios-cli hive infer --model hf:TheBloke/phi-2-GGUF:phi-2.Q4_K_M.gguf --prompt "Hello, Mad.jr Here! Can you explain hyperspace and its connection to modern science?"
-```
-- Jika gagal, "filed" lanjutkan ke langkah login.
+## Done!
+## Your Open Ledger Node is now running. ✅
 
-10. Impor PV.key dan Login
-## Impor file PV.key lalu login ke Hive:
-```bash
-aios-cli hive import-keys ./my.pem
-aios-cli hive login
-```
+> Notes
+- If you don't have a VPS, you can buy one from SUBS_SHAREITHUB that supports RDP for Open Ledger setup.
+- Make sure to secure your VPS credentials and backup your files.
 
-11. Sambungkan ke Jaringan Hive
+> License
+- This project is licensed under the MIT License - see the LICENSE file for details.
 ```bash
-aios-cli hive connect
+Jika kamu ingin menggunakan file ini di GitHub, cukup simpan sebagai `README.md` di repositorimu dan push ke GitHub. Jika ada perubahan atau tambahan yang ingin kamu buat, beri tahu saya!
 ```
-
-12. Cek Poin Anda
-- Cek saldo poin Anda di Hive:
-```bash
-aios-cli hive points
-```
-
-13. Cek PV.key dan Pub.Key
-- Verifikasi status kunci publik dan privat Anda:
-```bash
-aios-cli hive whoami
-```
-
-14. Hentikan Node
-```bash
-aios-cli kill
-```
-
-15. Masuk ke Screen Hyperspace
-```bash
-screen -r Hypernodes
-```
-
-16. Mulai Node dan Sambungkan
-```bash
-aios-cli start --connect
-```
-
-> Catatan Tambahan
-- Tier 3: Gunakan untuk VPS dengan RAM 8GB atau lebih.
-- Tier 5: Gunakan untuk VPS dengan RAM kurang dari 8GB.
-- Informasi Lebih Lanjut: Kunjungi node.hyper.space.
