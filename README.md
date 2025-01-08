@@ -60,7 +60,7 @@ openledger-node --no-sandbox
 ## Your Open Ledger Node is now running. ✅
 
 > Notes
-- If you don't have a VPS, you can buy one from SUBS_SHAREITHUB that supports RDP for Open Ledger setup.
+- If you don't have a VPS, you can buy one first.
 - Make sure to secure your VPS credentials and backup your files.
 
 > License
