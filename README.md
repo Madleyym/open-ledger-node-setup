@@ -1,7 +1,7 @@
 # Open Ledger Node Setup
 
 This repository contains the setup guide and necessary commands for running an Open Ledger Node on a VPS with the specified configuration.
-
+register here: https://testnet.openledger.xyz/?referral_code=pctnanynay
 ## Requirements
 
 - **VPS** with the following specifications:
